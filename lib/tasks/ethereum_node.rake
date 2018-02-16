@@ -8,7 +8,7 @@ namespace :ethereum do
       args = "--chain testnet"
       out, _, _ = Open3.capture3("parity #{args} account list")
       account = out.split(/[\[,\]]/)[0]
-      cmd = "parity #{args} --password ~/Library/Application\\ Support/io.parity.ethereum/pass --unlock #{account} --author #{account}"
+      cmd = "parity #{args} --author #{account} --password ~/Library/Application\\ Support/io.parity.ethereum/pass --unlock #{account}"
       puts cmd
       system cmd
     end
